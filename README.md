@@ -26,7 +26,11 @@ If you want to specify your username, use:
 
  ``` node index.js -u your-username-here ```
 
+
+
 NOTE: if you do not specify username it will randomize it for you, and if you do not specify the hostname, it uses "localhost"
+
+
 
 
 Example Usage:
