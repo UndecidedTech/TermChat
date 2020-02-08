@@ -37,7 +37,7 @@ if (!argv.host) {
   });
   socket.on("connect", () => {
     console.log("_______Start Chatting________" + username);
-    socket.send(username)
+    socket.send({username: "Admin"}, {cmd: `Welcome ${username} to the server`})
   })
   socket.on("message", (message) => {
     const {
