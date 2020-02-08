@@ -55,10 +55,10 @@ if (!argv.host) {
 
 
 
-socket.on("message", (message) => {
-    const {cmd, username} = message;
-    console.log(username + ": " + cmd)
-})
+// socket.on("message", (message) => {
+//     const {cmd, username} = message;
+//     console.log(username + ": " + cmd)
+// })
 
 // repl.start({
 //     prompt: "",
