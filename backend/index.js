@@ -7,8 +7,13 @@ const port = 3000;
 app.use(cors());
 io.set("origins", "*:*")
 
+const users = [];
+
+
 io.on("connection", (socket) => {
     console.log("connected")
+    console.log(socket);
+    
     socket.on("message", (evt) => {
         console.log(evt);
         socket.broadcast.emit("message", evt)
