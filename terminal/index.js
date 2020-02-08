@@ -2,35 +2,56 @@ const ip = require("ip");
 
 let clientIp = ip.address();
 let serverIp = clientIp.substr(0, (clientIp.length - 3));
+const yargs = require("yargs");
 
-try {
+const repl = require("repl");
+
+let username = "";
+const randomNames = ["bran", "alex", "sean", "travis"];
+
+const argv = yargs
+    .option("username", {
+        alias: "u",
+        description: "Set username",
+        type: "string"
+    })
+    .option("host", {
+        alias: "h",
+        description: "Set host to connect to (ex: \"bluedragon\" or \"192.168.0.2\")",
+        type: "string"
+    })
+    .help()
+    .alias("help", "h")
+    .argv;
+
+if (argv.username) {
+    username = argv.username;
+} else {
+    username = randomNames[Math.floor(Math.random() * randomNames.length)]
+}
+
+if (!argv.host) {
     for (let i = 0; i <= 255; i++) {
-        testConnection = require("socket.io-client")(`http://${serverIp}${i}:3000`, {reconnection: false});
-        testConnection.on("connect", () => {
-            console.log("here");
-            if (testConnection.connected){
-                console.log("connected at: " + serverIp+i);
-            }
+        let socket = require("socket.io-client")(`http://${serverIp}${i}:3000`, {
+          reconnection: false
         });
-    }
-} catch (error) {
-    console.error(error);
+        socket.on("connect", () => {
+          console.log("_______Start Chatting________" + username);
+        })
+      }
+} else {
+    let socket = require("socket.io-client")(`http://${process.argv[3]}:3000`, {
+    reconnection: false
+  });
+  socket.on("connect", () => {
+    console.log("_______Start Chatttttttttting________" + username)
+  })
 }
 
 
+// const socket = require("socket.io-client")("http://bluedragon:3000");
 
-// const socket = require("socket.io-client")("http://localhost:3000");
-// const repl = require("repl");
 
-// let username = "";
-// const randomNames = ["bran", "alex", "sean", "travis"];
-
-// socket.on("connect", () => {
-//     console.log("_______Start Chatttttttttting________")
-//     username = process.argv[2];
-//     // if (typeof username === "undefined")
-//     //     username = randomNames[]
-// })
 
 // socket.on("message", (message) => {
 //     const {cmd, username} = message;

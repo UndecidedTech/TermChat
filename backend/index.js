@@ -1,8 +1,11 @@
 const app = require("express")();
+const cors = require('cors');
 const server = require("http").createServer(app)
 const io = require("socket.io")(server);
-const http = require("http");
 const port = 3000;
+
+app.use(cors());
+io.set("origins", "*:*")
 
 io.on("connection", (socket) => {
     console.log("connected")
