@@ -24,5 +24,5 @@ In a second terminal run your frontend:
 
 If you want to specify your username, use:
 
-  "node index.js -u your-username-here"
+ ``` node index.js -u your-username-here ```
 
