@@ -13,7 +13,7 @@ const users = [];
 io.on("connection", (socket) => {
     console.log("connected")
 
-    socket.on("connect", (username) => {
+    socket.on("connect", (evt) => {
         socket.broadcast.emit("message", {"cmd": username, "username": "Admin"});
     })
     
