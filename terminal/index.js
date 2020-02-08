@@ -39,6 +39,10 @@ if (!argv.host) {
           console.log("_______Start Chatting________" + username);
           socket.send(username)
         })
+        socket.on("message", (message) => {
+            const {cmd, username} = message;
+            console.log(username + ": " + cmd)
+        })
       }
 } else {
     let socket = require("socket.io-client")(`http://${process.argv[3]}:3000`, {
@@ -48,6 +52,10 @@ if (!argv.host) {
     console.log("_______Start Chatttttttttting________" + username)
     socket.send(username)
   })
+  socket.on("message", (message) => {
+    const {cmd, username} = message;
+    console.log(username + ": " + cmd)
+})
 }
 
 
@@ -55,10 +63,10 @@ if (!argv.host) {
 
 
 
-// socket.on("message", (message) => {
-//     const {cmd, username} = message;
-//     console.log(username + ": " + cmd)
-// })
+socket.on("message", (message) => {
+    const {cmd, username} = message;
+    console.log(username + ": " + cmd)
+})
 
 // repl.start({
 //     prompt: "",
