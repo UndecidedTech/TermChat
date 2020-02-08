@@ -55,7 +55,7 @@ if (!argv.host) {
     }
   })
 } else {
-  let socket = require("socket.io-client")(`http://${process.argv[3]}:3000`, {
+  let socket = require("socket.io-client")(`http://${argv.host}:3000`, {
     reconnection: false
   });
   socket.on("connect", () => {
