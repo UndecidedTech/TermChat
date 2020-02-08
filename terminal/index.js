@@ -28,10 +28,7 @@ if (argv.username) {
   username = randomNames[Math.floor(Math.random() * randomNames.length)]
 }
 
-console.log(argv.host);
-
 if (!argv.host) {
-    console.log("here");
   let socket = require("socket.io-client")("http://localhost:3000", {
     reconnection: false
   });
@@ -56,7 +53,6 @@ if (!argv.host) {
     }
   })
 } else {
-    console.log("there");
   let socket = require("socket.io-client")(`http://${argv.host}:3000`, {
     reconnection: false
   });
