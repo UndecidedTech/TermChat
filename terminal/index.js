@@ -31,31 +31,29 @@ if (argv.username) {
 }
 
 if (!argv.host) {
-  for (let i = 0; i <= 255; i++) {
-    let socket = require("socket.io-client")(`http://${serverIp}${i}:3000`, {
-      reconnection: false
-    });
-    socket.on("connect", () => {
-      console.log("_______Start Chatting________" + username);
-      socket.send(username)
-    })
-    socket.on("message", (message) => {
-      const {
+  let socket = require("socket.io-client")("http://localhost:3000", {
+    reconnection: false
+  });
+  socket.on("connect", () => {
+    console.log("_______Start Chatting________" + username);
+    socket.send(username)
+  })
+  socket.on("message", (message) => {
+    const {
+      cmd,
+      username
+    } = message;
+    console.log(username + ": " + cmd)
+  })
+  repl.start({
+    prompt: "",
+    eval: (cmd) => {
+      socket.send({
         cmd,
         username
-      } = message;
-      console.log(username + ": " + cmd)
-    })
-    repl.start({
-      prompt: "",
-      eval: (cmd) => {
-        socket.send({
-          cmd,
-          username
-        })
-      }
-    })
-  }
+      })
+    }
+  })
 } else {
   let socket = require("socket.io-client")(`http://${process.argv[3]}:3000`, {
     reconnection: false
