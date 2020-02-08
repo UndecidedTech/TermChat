@@ -77,20 +77,3 @@ if (!argv.host) {
     }
   })
 }
-
-
-// const socket = require("socket.io-client")("http://bluedragon:3000");
-
-
-
-// socket.on("message", (message) => {
-//     const {cmd, username} = message;
-//     console.log(username + ": " + cmd)
-// })
-
-// repl.start({
-//     prompt: "",
-//     eval: (cmd) => {
-//         socket.send({cmd, username})
-//     }
-// })
