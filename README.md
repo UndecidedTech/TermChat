@@ -33,4 +33,4 @@ Example Usage:
 
 ----------------------------------------------------------------
 
-![github-large](https://ibb.co/GT2bBgB][img]https://i.ibb.co/X8svNmN/backend-Pic.png)
+![github-large](https://i.ibb.co/X8svNmN/backend-Pic.png)
