@@ -12,10 +12,6 @@ const users = [];
 
 io.on("connection", (socket) => {
     console.log("connected")
-
-    socket.on("connect", (evt) => {
-        socket.broadcast.emit("message", evt);
-    })
     
     socket.on("message", (evt) => {
         console.log(evt);
