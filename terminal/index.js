@@ -36,7 +36,7 @@ if (!argv.host) {
     reconnection: false
   });
   socket.on("connect", () => {
-    console.log("_______Start Chatting________" + username);
+    console.log("_______Start Chatting________");
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`})
   })
   socket.on("message", (message) => {
@@ -61,7 +61,7 @@ if (!argv.host) {
     reconnection: false
   });
   socket.on("connect", () => {
-    console.log("_______Start Chatttttttttting________" + username)
+    console.log("_______Start Chatttttttttting________")
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`});
   })
   socket.on("message", (message) => {
