@@ -29,8 +29,4 @@ If you want to specify your username, use:
 
 Example Usage:
 
-![github-medium](exampleCmd.png)
-
-------------------------------------------------------------------
-
-![github-large](usageVid.gif)
+![github-large](https://i.ibb.co/3m7XSz1/example-Cmd.png)
