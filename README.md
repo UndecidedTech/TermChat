@@ -26,3 +26,8 @@ If you want to specify your username, use:
 
  ``` node index.js -u your-username-here ```
 
+
+Example Usage:
+
+![github-medium](exampleCmd.png)
+
