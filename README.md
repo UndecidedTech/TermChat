@@ -13,9 +13,16 @@ In one terminal run your backend:
 In a second terminal run your frontend:
 
 
-  To Run Frontend:
+  To Run Client:
   
   
       1. cd TermChat/terminal
       2. run "npm install"
-      3. run "node index.js" or specify the host you're connecting to with " node index.js -h 'your-hostname-or-ip' "
+      3. run "node index.js" or specify the host you're connecting to with " node index.js -h your-hostname-or-ip "
+
+
+
+If you want to specify your username, use:
+
+  "node index.js -u your-username-here"
+
