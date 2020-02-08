@@ -37,6 +37,7 @@ if (!argv.host) {
         });
         socket.on("connect", () => {
           console.log("_______Start Chatting________" + username);
+          socket.send(username)
         })
       }
 } else {
@@ -45,6 +46,7 @@ if (!argv.host) {
   });
   socket.on("connect", () => {
     console.log("_______Start Chatttttttttting________" + username)
+    socket.send(username)
   })
 }
 
@@ -53,10 +55,10 @@ if (!argv.host) {
 
 
 
-// socket.on("message", (message) => {
-//     const {cmd, username} = message;
-//     console.log(username + ": " + cmd)
-// })
+socket.on("message", (message) => {
+    const {cmd, username} = message;
+    console.log(username + ": " + cmd)
+})
 
 // repl.start({
 //     prompt: "",
