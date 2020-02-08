@@ -31,3 +31,6 @@ Example Usage:
 
 ![github-medium](exampleCmd.png)
 
+------------------------------------------------------------------
+
+![github-large](usageVid.gif)
