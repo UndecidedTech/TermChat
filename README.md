@@ -2,7 +2,10 @@
 “It is not the gift, but the thought that counts” - Henry van Dyke
 
 In one terminal run your backend:
+
   To Run Backend:
+  
+  
       1. cd TermChat/backend/
       2. run "npm install"
       3. run "npm run dev"
