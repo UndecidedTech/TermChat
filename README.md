@@ -27,6 +27,16 @@ If you want to specify your username, use:
  ``` node index.js -u your-username-here ```
 
 
+
+NOTE: if you do not specify username it will randomize it for you, and if you do not specify the hostname, it uses "localhost"
+
+
+
+
 Example Usage:
 
 ![github-large](https://i.ibb.co/3m7XSz1/example-Cmd.png)
+
+----------------------------------------------------------------
+
+![github-large](https://i.ibb.co/X8svNmN/backend-Pic.png)
