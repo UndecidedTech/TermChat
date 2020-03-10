@@ -34,6 +34,9 @@ if (!argv.host) {
   });
   socket.on("connect", () => {
     console.log("_______Start Chatting________");
+    socket.emit("JOIN", {
+      "username": username
+    });
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`})
   })
   socket.on("message", (message) => {
@@ -58,6 +61,9 @@ if (!argv.host) {
   });
   socket.on("connect", () => {
     console.log("_______Start Chatting________")
+    socket.emit("JOIN", {
+      "username": username
+    });
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`});
   })
   socket.on("message", (message) => {
