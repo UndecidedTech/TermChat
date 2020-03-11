@@ -19,6 +19,7 @@ In a second terminal run your frontend:
       1. cd TermChat/terminal
       2. run "npm install"
       3. run "node index.js" or specify the host you're connecting to with " node index.js -h your-hostname-or-ip "
+      4. type "!help" to see the commands, or being typing to send a message!
 
 
 
