@@ -35,7 +35,8 @@ if (!argv.host) {
   socket.on("connect", () => {
     console.log("_______Start Chatting________");
     socket.emit("JOIN", {
-      "username": username
+      "username": username,
+      "userId": socket.id
     });
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`})
   })
@@ -62,7 +63,8 @@ if (!argv.host) {
   socket.on("connect", () => {
     console.log("_______Start Chatting________")
     socket.emit("JOIN", {
-      "username": username
+      "username": username,
+      "userId": socket.id
     });
     socket.send({username: "Admin", cmd: `Welcome ${username} to the server\n`});
   })
